@@ -3,7 +3,7 @@
 
 
 ## Step 1 : The hardware
-![image]final-project/IMG_5033.JPG
+![image]https://github.com/miya540/final-project/blob/master/IMG_5033.JPG
 ### What You Need:
 
 - Raspberry Pi 3
