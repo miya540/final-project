@@ -46,3 +46,58 @@ Wire up to PIR Sensor & Pi as following:
 
 
 ## Step 2 : The software
+### The code 
+The motion sensor is designed to send a web based alarm and light up the red light, when it detects motion. 
+
+### Breaking up the code
+#### Line by line explanation of what the code does:
+- **gpio** to access the GPIO (general purpose input output)pins on the Raspberry Pi. This library lets handles the interfacing with the pins.
+- **time** to control Flashing intervel .
+
+ ```python
+import RPi.GPIO as gpio
+import time
+```
+
+- Setting the number 1-5 to count times
+ ```python
+ DISPLAY = [0x06,0x5B,0x4F,0x66,0x6D]
+ ```
+ 
+ - **setmode** : set up Pin numbering
+ - Set Pin 26(PIR sensor) as input, and tell the Pi to pull up a Resistor on PIN26. Now the PI will look for low voltage on PIN26.
+ - Set Pin 11(Red LED) & 7(Green LED) as output
+  ```python
+gpio.setmode(gpio.BOARD)
+gpio.setup(26,gpio.IN, pull_up_down=gpio.PUD_UP)
+gpio.setup(11,gpio.OUT)
+gpio.setup(7,gpio.OUT)
+ ```
+ - Set Pin 33, 31, 36, 38, 40, 35, 37, 32(sevensegment as output) 
+  ```python
+gpio.setup(33,gpio.OUT)
+gpio.setup(31,gpio.OUT)
+gpio.setup(36,gpio.OUT)
+gpio.setup(38,gpio.OUT)
+gpio.setup(40,gpio.OUT)
+gpio.setup(35,gpio.OUT)
+gpio.setup(37,gpio.OUT)
+gpio.setup(32,gpio.OUT)
+ ```
+ 
+  - Let green LED light up as usual 
+   ```python
+ gpio.output(7, True)
+  ```
+  
+   ```python
+ def action(channel):
+    gpio.output(7, False)
+    print ("Motion detected")
+    for i in range(5):
+        gpio.output(11, True)
+        pin = DISPLAY[i]
+        PORT(pin);
+        time.sleep(0.5)
+        
+ ```
