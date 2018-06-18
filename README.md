@@ -162,3 +162,5 @@ RPi.GPIO provides a built-in function GPIO.cleanup() to clean up all the ports y
 except:
     gpio.cleanup()
 ```
+
+[![ScreenShot](/upload/ask/29/W/WebMole_Youtube_Video.png)](https://youtu.be/Wj5X0hseVd4)
