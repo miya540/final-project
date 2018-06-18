@@ -63,9 +63,9 @@ Setting the number 1-5 to count times
 DISPLAY = [0x06,0x5B,0x4F,0x66,0x6D]
  ```
  
-**setmode** : set up Pin numbering
+- **setmode** : set up Pin numbering
 Set Pin 26(PIR sensor) as input, and tell the Pi to pull up a Resistor on PIN26. Now the PI will look for low voltage on PIN26.
-Set Pin 11(Red LED) & 7(Green LED) as output.
+Then set Pin 11(Red LED) & 7(Green LED) as output.
  ```python
 gpio.setmode(gpio.BOARD)
 gpio.setup(26,gpio.IN, pull_up_down=gpio.PUD_UP)
@@ -92,9 +92,9 @@ gpio.output(7, True)
 
 When motion is detected, the green LED turn off, and print "Motion detected".
 Set range 1 to 5, and the red LED will light up five times.
-- **pin = DISPLAY[i]** assign value to 'pin' for each digit
-- **PORT(pin);** show each digit on display
-The green light will light up again to show motion is not detected now.
+- **pin = DISPLAY[i]** assign value to 'pin' for each digit.
+- **PORT(pin)** show each digit on display.
+Then the green light will light up again to show motion is not detected now.
  ```python
 def action(channel):
     gpio.output(7, False)
@@ -109,7 +109,7 @@ def action(channel):
     gpio.output(7, True)
  ```
 
-Assign GPIO logic by taking 'pin' value.
+Assign GPIO logic by taking 'pin' value, and judge "pin" is true or false to pull Pin high or low.
  ```python 
  def PORT(pin):                    
     if(pin&0x01 == 0x01):
@@ -146,7 +146,7 @@ Assign GPIO logic by taking 'pin' value.
         gpio.output(32,0)            # if  bit7 of 8bit 'pin' is false, pull PIN322 low
 ```
 
-
+Set detect event to call action.
  ```python
 try:
     gpio.add_event_detect(26, gpio.RISING, callback=action, bouncetime=200)
