@@ -33,15 +33,15 @@ def action(channel):
 
 def PORT(pin):                    # assigning GPIO logic by taking 'pin' value
     if(pin&0x01 == 0x01):
-        gpio.output(33,1)            # if  bit0 of 8bit 'pin' is true, pull PIN13 high
+        gpio.output(33,1)            # if  bit0 of 8bit 'pin' is true, pull PIN33 high
     else:
-        gpio.output(33,0)            # if  bit0 of 8bit 'pin' is false, pull PIN13 low
+        gpio.output(33,0)            # if  bit0 of 8bit 'pin' is false, pull PIN33 low
     if(pin&0x02 == 0x02):
-        gpio.output(31,1)             # if  bit1 of 8bit 'pin' is true, pull PIN6 high
+        gpio.output(31,1)             # if  bit1 of 8bit 'pin' is true, pull PIN31 high
     else:
-        gpio.output(31,0)            #if  bit1 of 8bit 'pin' is false, pull PIN6 low
+        gpio.output(31,0)            #if  bit1 of 8bit 'pin' is false, pull PIN31 low
     if(pin&0x04 == 0x04):
-        gpio.output(36,1)
+        gpio.output(36,1)           
     else:
         gpio.output(36,0)
     if(pin&0x08 == 0x08):
@@ -61,9 +61,9 @@ def PORT(pin):                    # assigning GPIO logic by taking 'pin' value
     else:
         gpio.output(37,0)
     if(pin&0x80 == 0x80):
-        gpio.output(32,1)            # if  bit7 of 8bit 'pin' is true, pull PIN12 high
+        gpio.output(32,1)            # if  bit7 of 8bit 'pin' is true, pull PIN32 high
     else:
-        gpio.output(32,0)            # if  bit7 of 8bit 'pin' is false, pull PIN12 low
+        gpio.output(32,0)            # if  bit7 of 8bit 'pin' is false, pull PIN322 low
         
  
 try:
