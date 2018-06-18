@@ -163,5 +163,5 @@ except:
     gpio.cleanup()
 ```
 
-[![ScreenShot](/upload/ask/29/W/WebMole_Youtube_Video.png)](https://youtu.be/Wj5X0hseVd4)
+V
 [![圖片 ALT 文字放在這裡](http://img.youtube.com/vi/Wj5X0hseVd4/0.jpg)](https://youtu.be/Wj5X0hseVd4)
