@@ -6,7 +6,7 @@ DISPLAY = [0x06,0x5B,0x4F,0x66,0x6D]
 gpio.setmode(gpio.BOARD)
 gpio.setup(26,gpio.IN, pull_up_down=gpio.PUD_UP)
 gpio.setup(11,gpio.OUT)
-gpio.setup(13,gpio.OUT)
+gpio.setup(7,gpio.OUT)
 
 gpio.setup(33,gpio.OUT)
 gpio.setup(31,gpio.OUT)
@@ -17,10 +17,10 @@ gpio.setup(35,gpio.OUT)
 gpio.setup(37,gpio.OUT)
 gpio.setup(32,gpio.OUT) 
 
-gpio.output(13, True)
+gpio.output(7, True)
 
 def action(channel):
-    gpio.output(13, False)
+    gpio.output(7, False)
     print ("Motion detected")
     for i in range(5):
         gpio.output(11, True)
@@ -29,7 +29,7 @@ def action(channel):
         time.sleep(0.5)
         gpio.output(11, False)
         time.sleep(0.2)
-    gpio.output(13, True)
+    gpio.output(7, True)
 
 def PORT(pin):                    # assigning GPIO logic by taking 'pin' value
     if(pin&0x01 == 0x01):
