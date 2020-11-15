@@ -1,4 +1,4 @@
-# final project_PIR sensor with LED & sevensegment
+# Final project_PIR sensor with LED & sevensegment
 
 The green LED light up when motion is not detected.
 When motion is detected, the green LED will turn off, the red LED will light up five times, and the sevensegment will read five seconds.
